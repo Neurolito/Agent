@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>neurolito-agent</id>
+    <version>0.0.0</version>
+    <title>Neurolito Agent</title>
+
+    <owners>Thargelion AB</owners>
+    <authors>Daniel Bohlin</authors>
+
+    <summary>Neurolito Agent service.</summary>
+    <description>Neurolito Agent handles requests from Neurolito Server.</description>
+
+    <tags>LLM Agent neurolito</tags>
+  </metadata>
+</package>
