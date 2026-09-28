@@ -10,8 +10,8 @@
 		<Description>Client for Neurolito: queue prompts, follow their status and vote on answers, run on your team's agents.</Description>
 		<PackageIconUrl>https://thargelion.net/assets/product-neurolito.png</PackageIconUrl>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageProjectUrl>https://github.com/Neurolito/Agent</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Neurolito/Agent</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Neurolito/neurolito-agent</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Neurolito/neurolito-agent</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<IncludeSymbols>true</IncludeSymbols>
