@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="install.agent.ps1" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Tharga.Neurolito.Agent.Tests/Tharga.Neurolito.Agent.Tests.csproj" />
+  <Project Path="Tharga.Neurolito.Agent/Tharga.Neurolito.Agent.csproj" />
+  <Project Path="Tharga.Neurolito.Client/Tharga.Neurolito.Client.csproj" />
+</Solution>

@@ -1,0 +1,40 @@
+name: Bug report
+description: Something in the agent or the client does not work as it should
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Agent or client version
+      description: The agent shows it on its status page and in its log at startup.
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: How the agent is installed
+      options:
+        - Container
+        - Chocolatey (Windows service)
+        - From source
+        - Not about the agent (client package)
+    validations:
+      required: true
+  - type: input
+    id: machine
+    attributes:
+      label: Operating system and graphics card
+      placeholder: e.g. Windows 11, NVIDIA RTX 4070 / Ubuntu 24.04, CPU only
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: The agent's log around the problem. Remove your install key and anything else private.
+      render: text
