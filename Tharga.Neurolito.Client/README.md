@@ -34,4 +34,4 @@ you when the job completes.
 
 ## Source and issues
 
-[github.com/Neurolito/Agent](https://github.com/Neurolito/Agent)
+[github.com/Neurolito/neurolito-agent](https://github.com/Neurolito/neurolito-agent)

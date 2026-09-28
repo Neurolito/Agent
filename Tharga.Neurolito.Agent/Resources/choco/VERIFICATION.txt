@@ -2,7 +2,7 @@ VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community in verifying that this package’s binary distribution is trustworthy.
 
 1. The executable (tharga.neurolito.agent.exe) was built from source available at:
-   https://github.com/Neurolito/Agent
+   https://github.com/Neurolito/neurolito-agent
 
 2. The maintainer (Daniel Bohlin) is the author and publisher of this software.
 

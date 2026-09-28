@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 **Do not open a public issue for a security problem.** Report it privately through GitHub:
-[Report a vulnerability](https://github.com/Neurolito/Agent/security/advisories/new).
+[Report a vulnerability](https://github.com/Neurolito/neurolito-agent/security/advisories/new).
 
 Say what you found, how to reproduce it, and which version you tested. You will get an answer within
 a few working days, and we will tell you when a fix is released.
