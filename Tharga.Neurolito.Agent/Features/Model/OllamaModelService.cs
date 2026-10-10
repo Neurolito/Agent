@@ -31,7 +31,9 @@ internal class OllamaModelService : IOllamaModelService
     {
         using var client = new OllamaApiClient(_options.Address);
 
-        var modelsInstalled = await client.ListLocalModelsAsync(cancellationToken);
+        //NOTE: The larger-context copies made for Anthropic requests are an implementation detail, never a model
+        //to offer or to resolve a name to.
+        var modelsInstalled = (await client.ListLocalModelsAsync(cancellationToken)).Where(x => !ContextVariant.IsVariant(x.Name));
         var modelsRunning = (await client.ListRunningModelsAsync(cancellationToken)).ToArray();
 
         foreach (var modelInstalled in modelsInstalled)
@@ -39,31 +41,7 @@ internal class OllamaModelService : IOllamaModelService
             var modelRunning = modelsRunning.FirstOrDefault(x => x.Name == modelInstalled.Name);
             var modelInfo = await GetModelAsync(modelInstalled.Name);
 
-            //modelRunning.SizeVram
-            //modelRunning.ExpiresAt
-            //modelRunning.ContextLength
-
-            //modelInfo.License
-            //modelInfo.Modelfile
-            //modelInfo.Parameters
-            //modelInfo.Template
-            //modelInfo.System
-            //modelInfo.Details
-            //modelInfo.Info
-            //modelInfo.Projector
-            //modelInfo.Capabilities
-            //var supportsThinking = modelInfo.Capabilities?.Any(c => string.Equals(c, "thinking", StringComparison.OrdinalIgnoreCase)) == true;
-
-            var result = new LLModel
-            {
-                Name = modelInstalled.Name,
-                Loaded = modelRunning != null,
-                Details = new ModelDetails
-                {
-                    ParameterSize = modelInstalled.Details.ParameterSize,
-                    ParameterCount = modelInfo.Info.ParameterCount,
-                }
-            };
+            var result = Features.Model.ModelReport.Build(modelInstalled, modelRunning, modelInfo);
 
             yield return result;
         }
@@ -202,6 +180,7 @@ internal class OllamaModelService : IOllamaModelService
                 Name = version == null ? null : $"Ollama {version}",
                 Models = models.ToArray(),
                 SupportsSelfTest = true,
+                AnthropicContextLength = _options.AnthropicContextLength > 0 ? _options.AnthropicContextLength : null,
             };
         }
         catch (Exception e)
